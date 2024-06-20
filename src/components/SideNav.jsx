@@ -24,13 +24,13 @@ const SideNav = () => {
     <div className='bg-primary w-[18%] h-[100dvh] fixed overflow-y-auto'>
       <h1 className='text-white text-[26px] text-center font-[700] my-5'>Havilah Admin</h1>
       <ul className='text-white'>
-        <li className={location.pathname.includes("/blogs") || location.pathname === '/' ? `bg-blue-700 py-3 pl-3` : `py-3 pl-3`}>
+        <li className={location.pathname.includes("blog") || location.pathname === '/' ? `bg-blue-700 py-3 pl-3` : `py-3 pl-3`}>
           <Link to="/blogs" className='flex items-center gap-3'>
             <GrBlog fontSize={"22px"}/>
             <p>Blogs</p>
           </Link>
         </li>
-        <li className={location.pathname.includes("/customer") ? `bg-blue-700 py-3 pl-3` :`py-3 pl-3`}>
+        <li className={location.pathname.includes("customer") ? `bg-blue-700 py-3 pl-3` :`py-3 pl-3`}>
           <Link to="/customer-reviews" className='flex items-center gap-4'>
             <FaRegUser fontSize={"22px"}/>
             <p>Customer Reviews</p>

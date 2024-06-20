@@ -27,11 +27,6 @@ const TopNav = () => {
             <p>Sign Out</p>
           </p>
         </dvi>
-        {/* <div className='border border-[#CFCFCF] rounded-full flex items-center py-1 px-3'>
-          <input type="text" className='outline-none'/>
-          <IoSearchOutline />
-        </div>
-        <img src="./userimg.png" className='w-[40px] ml-7' alt="" /> */}
       </div>
     </div>
   )

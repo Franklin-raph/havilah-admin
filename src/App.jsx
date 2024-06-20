@@ -6,6 +6,7 @@ import TopNav from './components/TopNav'
 import SideNav from './components/SideNav'
 import Blogs from './pages/Blogs'
 import CustomerReviews from './pages/CustomerReviews'
+import CreateBlog from './pages/CreateBlog'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
             <Route path='/' element={<Login baseUrl={baseUrl}/>}/>
             <Route path='/blogs' element={<Blogs baseUrl={baseUrl}/>}/>
             <Route path='/customer-reviews' element={<CustomerReviews baseUrl={baseUrl}/>}/>
+            <Route path='/add-blog' element={<CreateBlog />}/>
           </Routes>
         </div>
       </div>
