@@ -1,34 +1,32 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { HashRouter, Route, Routes } from 'react-router-dom'
+import Login from './pages/Login'
+import TopNav from './components/TopNav'
+import SideNav from './components/SideNav'
+import Blogs from './pages/Blogs'
+import CustomerReviews from './pages/CustomerReviews'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const baseUrl = "https://google.com"
+  
+  // const [admin, setAdmin] = useState(false)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <HashRouter>
+      {localStorage.getItem('admin') && <TopNav />}
+      <div className='flex items-center'>
+        {localStorage.getItem('admin') && <SideNav />}
+        <div className={localStorage.getItem('admin') ? `w-[82%] bg-[#f6f6f6] pt-[6rem] ml-auto px-[1.5rem] h-[100dvh]` : 'w-[100%]'}>
+          <Routes>
+            <Route path='/' element={<Login baseUrl={baseUrl}/>}/>
+            <Route path='/blogs' element={<Blogs baseUrl={baseUrl}/>}/>
+            <Route path='/customer-reviews' element={<CustomerReviews baseUrl={baseUrl}/>}/>
+          </Routes>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </HashRouter>
   )
 }
 
