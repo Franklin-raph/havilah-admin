@@ -19,7 +19,7 @@ function App() {
       {localStorage.getItem('admin') && <TopNav />}
       <div className='flex items-center'>
         {localStorage.getItem('admin') && <SideNav />}
-        <div className={localStorage.getItem('admin') ? `w-[82%] bg-[#f6f6f6] pt-[6rem] ml-auto px-[1.5rem] h-[100dvh]` : 'w-[100%]'}>
+        <div className={localStorage.getItem('admin') ? `w-[82%] pt-[6rem] ml-auto px-[1.5rem] h-[100dvh]` : 'w-[100%]'}>
           <Routes>
             <Route path='/' element={<Login baseUrl={baseUrl}/>}/>
             <Route path='/blogs' element={<Blogs baseUrl={baseUrl}/>}/>

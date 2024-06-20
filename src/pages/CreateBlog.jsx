@@ -7,7 +7,7 @@ const CreateBlog = () => {
     const [title, setTitle] = useState('')
 
   return (
-    <div className='w-[70%] mx-auto'>
+    <div className='w-[70%] mx-auto pb-[3rem]'>
         <div className='mt-[2rem]'>
             <label className="text-[#121212] gont-[500] text-[20px] mb-1 block">Blog Title</label>
             <input
@@ -21,6 +21,15 @@ const CreateBlog = () => {
             <label className="text-[#121212] gont-[500] text-[20px] mb-1 block">Blog Category</label>
             <input
                 type="text"
+                onChange={e => setTitle(e.target.value)}
+                placeholder="Enter blog category"
+                className="border border-gray-300 text-[#707070] p-3 bg-transparent mt-1 rounded-[6px] outline-none w-full"
+            />
+        </div>
+        <div className='mt-[1.5rem]'>
+            <label className="text-[#121212] gont-[500] text-[20px] mb-1 block">Blog Image</label>
+            <input
+                type="file"
                 onChange={e => setTitle(e.target.value)}
                 placeholder="Enter blog category"
                 className="border border-gray-300 text-[#707070] p-3 bg-transparent mt-1 rounded-[6px] outline-none w-full"
